@@ -44,7 +44,7 @@
 <script type="module">
   import sidebar from "/components/sidebar.js";
   import { apiCall, appendArticles } from "/scripts/main.js";
-  import { storeSearchterm } from "/scripts/search.js";
+  import storeSearchterm from "/scripts/search.js";
 
   let sidebar_div = document.getElementById("sidebar");
   sidebar_div.innerHTML = sidebar();
@@ -56,11 +56,11 @@
   let res = await fetch(
     "https://shrouded-earth-23381.herokuapp.com/api/headlines/india"
   );
-  let res = await fetch(
+  let res1 = await fetch(
     `https://shrouded-earth-23381.herokuapp.com/api/search/?q=${storeterm}`
   );
   // console.log("res:", res);
-  // storeSearchterm(storeterm);
+  storeSearchterm(storeterm);
   // appendArticles(res1, main);
   appendArticles(res, main);
 </script>
